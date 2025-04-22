@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>狗狗圖片展示</title>
+    <style>
+        /* 全局設定 */
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f0f2f5;
+        }
+
+        /* 頁面標題 */
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+            font-size: 2.5rem;
+        }
+
+        /* 容器：排版用 flex */
+        .flex_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* 單張卡片 */
+        .box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 275px;
+            cursor: pointer;
+        }
+
+        /* 滑鼠懸停時的動畫效果 */
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 圖片樣式 */
+        .box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 底下標題文字 */
+        .caption {
+            padding: 0.5rem 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: #7cb919;
+            color: white;
+        }
+
+        /* 手機響應式設計 */
+        @media (max-width: 768px) {
+            .box {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>可愛狗狗圖片展示</h1>
+
+<div class="flex_container">
+    <div class="box" onclick="showInfo(0)">
+        <img src=https://media.istockphoto.com/id/1503385646/zh/%E7%85%A7%E7%89%87/portrait-funny-and-happy-shiba-inu-puppy-dog-peeking-out-from-behind-a-blue-banner-isolated-on.jpg?s=612x612&w=0&k=20&c=j6W1QMERTVgCfKQq7aWLv4m4vUmzHEaC8Iul9883-iE= alt="狗狗1" />
+        <div class="caption">雪球</div>
+    </div>
+    <div class="box" onclick="showInfo(1)">
+        <img src=https://media.istockphoto.com/id/1318666271/zh/%E7%85%A7%E7%89%87/%E7%B4%84%E5%85%8B%E9%83%A1%E7%8D%B5%E7%8A%AC%E5%9C%A8%E7%99%BD%E8%89%B2%E8%83%8C%E6%99%AF.jpg?s=612x612&w=0&k=20&c=BOpH9AWY5DoqrlkmrfKM_40fs5vKrrupi6rErtkSaIA= alt="狗狗2" />
+        <div class="caption">豆豆</div>
+    </div>
+    <div class="box" onclick="showInfo(2)">
+        <img src=https://media.istockphoto.com/id/525220069/zh/%E7%85%A7%E7%89%87/beautiful-happy-reddish-havanese-puppy-dog-is-sitting-frontal.jpg?s=612x612&w=0&k=20&c=D9GunqzYCQ0HsGsBbcQnm3iRMMngWl6uADxDVfxZ31I= alt="狗狗3" />
+        <div class="caption">奶茶</div>
+    </div>
+    <div class="box" onclick="showInfo(3)">
+        <img src=https://media.istockphoto.com/id/1680415391/zh/%E7%85%A7%E7%89%87/young-black-and-white-panting-border-collie-sitting-and-looking-at-the-camera-one-year-old.jpg?s=612x612&w=0&k=20&c=dAdykgkLo1DK-bPMVhBMk8BKN8cXoyvPwg2SYXhaSRs= alt="狗狗4" />
+        <div class="caption">黑糖</div>
+    </div>
+    <div class="box" onclick="showInfo(4)">
+        <img src=https://media.istockphoto.com/id/513133900/zh/%E7%85%A7%E7%89%87/golden-retriever-sitting-in-front-of-a-white-background.jpg?s=612x612&w=0&k=20&c=t0FSu6H8P0Q7NsrVUo36szVYDAF0Kc3aO_eGE4R7D6w= alt="狗狗5" />
+        <div class="caption">QQ</div>
+    </div>
+</div>
+
+<script>
+    // 狗狗資料陣列
+    const dogData = [
+        { name: "雪球", age: 2, breed: "比熊犬", personality: "活潑可愛" },
+        { name: "豆豆", age: 3, breed: "柴犬", personality: "勇敢又忠誠" },
+        { name: "奶茶", age: 1, breed: "黃金獵犬", personality: "溫柔親人" },
+        { name: "黑糖", age: 4, breed: "邊境牧羊犬", personality: "聰明愛學習" },
+        { name: "QQ", age: 2, breed: "臘腸狗", personality: "好奇又黏人" }
+    ];
+
+    // 顯示狗狗資訊
+    function showInfo(index) {
+        const dog = dogData[index];
+        const message = `🐶 名字：${dog.name}\n🐾 年齡：${dog.age} 歲\n📛 品種：${dog.breed}\n✨ 個性：${dog.personality}`;
+        alert(message);
+    }
+</script>
+
+</body>
+</html>
